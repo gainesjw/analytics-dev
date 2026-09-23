@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "repository": "analytics-dev",
+  "itemRoots": [
+    "projects"
+  ],
+  "allowedItemTypes": [
+    "SemanticModel",
+    "Report"
+  ],
+  "governance": {
+    "owner": "analytics-dev",
+    "classification": "internal"
+  },
+  "itemOverrides": {},
+  "dependencies": [],
+  "environments": {
+    "dev": {
+      "workspaceId": "REPLACE_WITH_ANALYTICS_DEV_DEV_WORKSPACE_ID",
+      "semanticModelConnectionId": "REPLACE_WITH_DEV_FABRIC_SQL_CONNECTION_ID"
+    },
+    "test": {
+      "workspaceId": "REPLACE_WITH_ANALYTICS_DEV_TEST_WORKSPACE_ID",
+      "semanticModelConnectionId": "REPLACE_WITH_TEST_FABRIC_SQL_CONNECTION_ID"
+    },
+    "prod": {
+      "workspaceId": "REPLACE_WITH_ANALYTICS_DEV_PROD_WORKSPACE_ID",
+      "semanticModelConnectionId": "REPLACE_WITH_PROD_FABRIC_SQL_CONNECTION_ID"
+    }
+  },
+  "externalDependencies": {
+    "engineering-lakehouse": {
+      "repository": "data-engineering-dev",
+      "owner": "data-engineering-dev",
+      "type": "Lakehouse",
+      "itemName": "lakehouse",
+      "sourceToken": "__LAKEHOUSE_SQL_ENDPOINT__",
+      "environments": {
+        "dev": {
+          "workspaceId": "REPLACE_WITH_DATA_ENGINEERING_DEV_WORKSPACE_ID"
+        },
+        "test": {
+          "workspaceId": "REPLACE_WITH_DATA_ENGINEERING_TEST_WORKSPACE_ID"
+        },
+        "prod": {
+          "workspaceId": "REPLACE_WITH_DATA_ENGINEERING_PROD_WORKSPACE_ID"
+        }
+      }
+    }
+  }
+}

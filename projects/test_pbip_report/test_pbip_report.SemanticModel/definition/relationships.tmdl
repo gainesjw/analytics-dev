@@ -1,0 +1,5 @@
+relationship c9994360-1241-440d-b450-47ac8d806ac7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'silver dm_primary_care_shortage_areas'._etl_processed_at
+	toColumn: LocalDateTable_9558ea03-1fa1-44c2-9460-1655a5708953.Date
+

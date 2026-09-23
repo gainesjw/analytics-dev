@@ -1,0 +1,21 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["silver dm_primary_care_shortage_areas"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'silver dm_primary_care_shortage_areas'
+ref table DateTableTemplate_cf73521d-503b-4181-bfaa-e9ef44e8cc64
+ref table LocalDateTable_9558ea03-1fa1-44c2-9460-1655a5708953
+
+ref cultureInfo en-US
+

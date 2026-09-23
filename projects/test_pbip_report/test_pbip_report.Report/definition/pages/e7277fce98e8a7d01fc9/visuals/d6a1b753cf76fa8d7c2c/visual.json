@@ -1,0 +1,160 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "d6a1b753cf76fa8d7c2c",
+  "position": {
+    "x": 159.72696245733789,
+    "y": 122.86689419795222,
+    "z": 0,
+    "height": 565.18771331058019,
+    "width": 793.72013651877137,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "silver dm_primary_care_shortage_areas"
+                    }
+                  },
+                  "Property": "MSSA_COUNTY"
+                }
+              },
+              "queryRef": "silver dm_primary_care_shortage_areas.MSSA_COUNTY",
+              "nativeQueryRef": "MSSA_COUNTY"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "silver dm_primary_care_shortage_areas"
+                    }
+                  },
+                  "Property": "PCSA"
+                }
+              },
+              "queryRef": "silver dm_primary_care_shortage_areas.PCSA",
+              "nativeQueryRef": "PCSA"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "silver dm_primary_care_shortage_areas"
+                        }
+                      },
+                      "Property": "EST_Physicians"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(silver dm_primary_care_shortage_areas.EST_Physicians)",
+              "nativeQueryRef": "Sum of EST_Physicians"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "silver dm_primary_care_shortage_areas"
+                        }
+                      },
+                      "Property": "EST_Providers"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(silver dm_primary_care_shortage_areas.EST_Providers)",
+              "nativeQueryRef": "Sum of EST_Providers"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "955de096ec42530528fc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "silver dm_primary_care_shortage_areas"
+              }
+            },
+            "Property": "MSSA_COUNTY"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "376dc51c27ac2dfad080",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "silver dm_primary_care_shortage_areas"
+              }
+            },
+            "Property": "PCSA"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "013989d3342a3f3fb634",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "silver dm_primary_care_shortage_areas"
+                  }
+                },
+                "Property": "EST_Physicians"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bb980c144fc533724c57",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "silver dm_primary_care_shortage_areas"
+                  }
+                },
+                "Property": "EST_Providers"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

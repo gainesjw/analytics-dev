@@ -1,0 +1,163 @@
+table 'silver dm_primary_care_shortage_areas'
+	lineageTag: ee4bb26d-8661-443d-a961-bd21eba071e4
+
+	column MSSA_COUNTY
+		dataType: string
+		lineageTag: e98209f9-567d-4b8b-95c5-960f25aa60fd
+		summarizeBy: none
+		sourceColumn: MSSA_COUNTY
+
+		annotation SummarizationSetBy = Automatic
+
+	column MSSA_ID
+		dataType: string
+		lineageTag: 666849f5-9fc2-4ab7-a928-a85e24b883be
+		summarizeBy: none
+		sourceColumn: MSSA_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column MSSA_NAME
+		dataType: string
+		lineageTag: 18db3f14-5442-4cf4-a5a8-7a02a2f58415
+		summarizeBy: none
+		sourceColumn: MSSA_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total_Population
+		dataType: int64
+		formatString: 0
+		lineageTag: 809f9de4-fa6f-4585-ad79-390c8a0aa20b
+		summarizeBy: sum
+		sourceColumn: Total_Population
+
+		annotation SummarizationSetBy = Automatic
+
+	column EST_Physicians
+		dataType: double
+		lineageTag: c5961226-0a11-4588-82aa-883afb6c41fe
+		summarizeBy: sum
+		sourceColumn: EST_Physicians
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EST_FNPPA
+		dataType: double
+		lineageTag: 4ed95bc1-e6bc-4b81-8a98-8118920dc3f1
+		summarizeBy: sum
+		sourceColumn: EST_FNPPA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EST_Providers
+		dataType: double
+		lineageTag: 5dc8a1c8-e50b-4fb2-aebe-5ae74611b2f9
+		summarizeBy: sum
+		sourceColumn: EST_Providers
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Provider_Ratio
+		dataType: double
+		lineageTag: d3cfa1c1-3add-46ba-92c7-0a57805a3490
+		summarizeBy: sum
+		sourceColumn: Provider_Ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Score_Provider_Ratio
+		dataType: int64
+		formatString: 0
+		lineageTag: 3e4987cb-427e-4252-8601-a4e86bf62229
+		summarizeBy: sum
+		sourceColumn: Score_Provider_Ratio
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pop_100FPL
+		dataType: int64
+		formatString: 0
+		lineageTag: 357792fb-e226-41af-8502-69e278037b5b
+		summarizeBy: sum
+		sourceColumn: Pop_100FPL
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCT_100FPL
+		dataType: double
+		lineageTag: 01c3e79a-8f22-44e8-ab5f-1d197270bb03
+		summarizeBy: sum
+		sourceColumn: PCT_100FPL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Score_Poverty
+		dataType: int64
+		formatString: 0
+		lineageTag: 396b8892-406c-420c-9a6a-f3fee9d53b2c
+		summarizeBy: sum
+		sourceColumn: Score_Poverty
+
+		annotation SummarizationSetBy = Automatic
+
+	column Score_Total
+		dataType: int64
+		formatString: 0
+		lineageTag: 906390db-8d60-44ac-bd2c-acfc0a700928
+		summarizeBy: sum
+		sourceColumn: Score_Total
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCSA
+		dataType: string
+		lineageTag: 5a461d63-6768-45f4-a703-3a2c2de5b3c1
+		summarizeBy: none
+		sourceColumn: PCSA
+
+		annotation SummarizationSetBy = Automatic
+
+	column Effective_Date
+		dataType: string
+		lineageTag: 351164c8-7043-48b5-8e8c-7d0c592fd6e4
+		summarizeBy: none
+		sourceColumn: Effective_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column _etl_processed_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9b188547-c5be-453a-b061-2f6b4c9b7708
+		summarizeBy: none
+		sourceColumn: _etl_processed_at
+
+		variation Variation
+			isDefault
+			relationship: c9994360-1241-440d-b450-47ac8d806ac7
+			defaultHierarchy: LocalDateTable_9558ea03-1fa1-44c2-9460-1655a5708953.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'silver dm_primary_care_shortage_areas' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("__LAKEHOUSE_SQL_ENDPOINT__", "lakehouse"),
+				    silver_dm_primary_care_shortage_areas = Source{[Schema="silver",Item="dm_primary_care_shortage_areas"]}[Data]
+				in
+				    silver_dm_primary_care_shortage_areas
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,14 @@
+.pbi/
+**/.pbi/
+.vscode/
+.DS_Store
+.work-folder-info
+__pycache__/
+.stubs/
+.vfscache/
+.vfsmeta/
+# Regenerated locally or published by CI; never edit generated inventories.
+.fabric/generated/
+.fabric/releases/
+__pycache__/
+.DS_Store
