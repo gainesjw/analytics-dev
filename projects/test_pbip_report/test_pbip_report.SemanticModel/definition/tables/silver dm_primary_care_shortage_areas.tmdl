@@ -146,7 +146,7 @@ table 'silver dm_primary_care_shortage_areas'
 		variation Variation
 			isDefault
 			relationship: c9994360-1241-440d-b450-47ac8d806ac7
-			defaultHierarchy: LocalDateTable_9558ea03-1fa1-44c2-9460-1655a5708953.'Date Hierarchy'
+			defaultHierarchy: LocalDateTable_7d048005-6025-585c-b256-a4a028c5b006.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 

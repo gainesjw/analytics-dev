@@ -14,8 +14,8 @@ annotation PBI_QueryOrder = ["silver dm_primary_care_shortage_areas"]
 annotation PBI_ProTooling = ["DevMode"]
 
 ref table 'silver dm_primary_care_shortage_areas'
-ref table DateTableTemplate_cf73521d-503b-4181-bfaa-e9ef44e8cc64
-ref table LocalDateTable_9558ea03-1fa1-44c2-9460-1655a5708953
+ref table DateTableTemplate_6f254b35-5c5d-56e9-bed1-7a1e173c2575
+ref table LocalDateTable_7d048005-6025-585c-b256-a4a028c5b006
 
 ref cultureInfo en-US
 
